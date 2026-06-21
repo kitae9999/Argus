@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# env
+.env
+.env.*
+!.env.example
+
+# frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# backend
+backend/.gradle/
+backend/build/
+backend/out/
+
+# logs
+*.log
+
+# terraform
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.*
+infra/terraform/.terraform.lock.hcl

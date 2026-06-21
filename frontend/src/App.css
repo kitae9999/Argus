@@ -1,0 +1,267 @@
+#root {
+  min-height: 100vh;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: #f6f7f9;
+  color: #17202a;
+}
+
+.sidebar {
+  border-right: 1px solid #dfe3e8;
+  background: #ffffff;
+  padding: 24px 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+  font-size: 20px;
+  color: #121923;
+  margin-bottom: 28px;
+}
+
+.nav {
+  display: grid;
+  gap: 4px;
+}
+
+.nav a {
+  color: #596574;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav a.active,
+.nav a:hover {
+  background: #eef2f6;
+  color: #17202a;
+}
+
+.workspace {
+  min-width: 0;
+  padding: 30px;
+}
+
+.topbar,
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  color: #697687;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: 6px;
+}
+
+.primary-button,
+.secondary-button {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  height: 38px;
+  padding: 0 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.secondary-button {
+  background: #ffffff;
+  color: #263241;
+  border-color: #cfd6df;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.metric-card {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 118px;
+}
+
+.metric-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #eef2f6;
+}
+
+.metric-card p {
+  color: #5d6978;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 27px;
+  letter-spacing: 0;
+  margin: 7px 0 5px;
+}
+
+.metric-card span {
+  color: #6b7684;
+  font-size: 13px;
+}
+
+.metric-card.risk .metric-icon { color: #b42318; background: #fff0ed; }
+.metric-card.cost .metric-icon { color: #087443; background: #e9f8ef; }
+.metric-card.data .metric-icon { color: #7c3aed; background: #f3edff; }
+.metric-card.notice .metric-icon { color: #b45309; background: #fff4df; }
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.table {
+  display: grid;
+  margin-top: 18px;
+  border: 1px solid #e6e9ee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 96px 92px minmax(260px, 1fr) 110px 100px 72px;
+  align-items: center;
+  min-height: 50px;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid #eef1f4;
+  font-size: 14px;
+}
+
+.table-row:last-child {
+  border-bottom: 0;
+}
+
+.table-head {
+  background: #f9fafb;
+  color: #697687;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.table-row strong {
+  font-weight: 700;
+}
+
+.severity {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.severity.high {
+  color: #9f1d14;
+  background: #ffe8e3;
+}
+
+.severity.medium {
+  color: #8a5200;
+  background: #fff1ce;
+}
+
+.severity.low {
+  color: #365314;
+  background: #edf7d7;
+}
+
+@media (max-width: 980px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #dfe3e8;
+  }
+
+  .nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .table {
+    overflow-x: auto;
+  }
+
+  .table-row {
+    min-width: 820px;
+  }
+}
+
+@media (max-width: 640px) {
+  .workspace {
+    padding: 18px;
+  }
+
+  .topbar,
+  .panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
